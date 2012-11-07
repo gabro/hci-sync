@@ -1,0 +1,51 @@
+\documentclass[conference, compsoc, 10pt]{IEEEtran}
+
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{soul,color}
+
+\title{TBD}
+\author{\IEEEauthorblockN{\textbf{Daniele Gallingani}}
+\IEEEauthorblockA{University of Illinois\\ at Chicago\\
+dgalli3@uic.edu}
+\and
+\IEEEauthorblockN{\textbf{Mingwei Li}}
+\IEEEauthorblockA{University of Illinois\\ at Chicago\\
+mli53@uic.edu}
+\and
+\IEEEauthorblockN{\textbf{Alessandro Panebianco}}
+\IEEEauthorblockA{University of Illinois\\ at Chicago\\
+apaneb2@uic.edu}
+\and
+\IEEEauthorblockN{\textbf{Gabriele Petronella}}
+\IEEEauthorblockA{University of Illinois\\ at Chicago\\
+gpetro3@uic.edu}}
+
+\newcommand{\testfirst}{Balloon Tapper}
+\newcommand{\testsecond}{Balloon Inflater}
+
+\begin{document}
+
+\maketitle
+\listoftodos
+
+\begin{abstract}
+	\lipsum[1]
+\end{abstract}
+
+\begin{IEEEkeywords}
+	Sync
+\end{IEEEkeywords}
+
+\input{related}
+\input{experiment}
+\input{performance}
+\input{findings}
+\input{conclusion}
+
+\nocite{*}
+\bibliographystyle{IEEETran}
+\bibliography{IEEEabrv,bibliography}
+
+\end{document}

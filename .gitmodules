@@ -1,0 +1,3 @@
+[submodule "BalloonTapper"]
+	path = BalloonTapper
+	url = git@github.com:Gabro/BalloonTapper.git
