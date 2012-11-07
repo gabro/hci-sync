@@ -1,5 +1,6 @@
-\contentsline {todo}{Figure: The first test}{2}{section*.4}
-\contentsline {todo}{Figure: The second test}{3}{section*.5}
-\contentsline {todo}{\color@box {}{yellow}{\leavevmode {\color {yellow}o}}\ Find a better name for this}{4}{section*.8}
-\contentsline {todo}{\color@box {}{yellow}{\leavevmode {\color {yellow}o}}\ Say something w.r.t to the data once we have them}{4}{section*.10}
-\contentsline {todo}{Figure: An image to explain the sync measure}{4}{section*.11}
+\contentsline {todo}{Figure: The first test}{\thepage }{subsection.2.1}
+\contentsline {todo}{Figure: The second test}{\thepage }{subsection.2.2}
+\contentsline {todo}{\color@box {}{yellow}{\leavevmode {\color {yellow}o}}\ Find a better name for this}{\thepage }{section*.5}
+\contentsline {todo}{\color@box {}{yellow}{\leavevmode {\color {yellow}o}}\ Say something w.r.t to the data once we have them}{\thepage }{section*.6}
+\contentsline {todo}{Figure: An image to explain the sync measure}{\thepage }{subsubsection.3.1.2}
+\contentsline {todo}{Figure: A graph of the function}{\thepage }{equation.3.2}
