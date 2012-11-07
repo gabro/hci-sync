@@ -6,13 +6,25 @@ In this section we now present the different performance measures adopted to eva
 In this test we want to measure the \emph{regularity} of the sequence of taps performed by the user. Moreover it is interesting to measure also the frequency synchronization w.r.t. the given beat and the \hl{``normalized'' synchronization}. \todo[color=yellow,inline]{Find a better name for this}
 Let us now see how we defined such measures.
 \subsubsection*{Regularity}
-We refer to regularity as the mean squared error of the intervals between each user's tap.
+For regularity we mean that the user should tap on the balloon at regular intervals. So a good regularity measure should be better when the time intervals are very similar to each other and bad when they are not. Therefore we decided to measure regularity as the \emph{mean squared error} (MSE) of the intervals between each user's tap.
 The lower the error the better the regularity.
+Thus the mathematical formulation will be
+\begin{align}
+	\frac{1}{n}\displaystyle\sum\limits_{i=0}^n(\bar{X}-X_i)^2
+\end{align}
+where $X_i$ is the ith time interval and $\bar{X}$ is the mean of the time intervals.
 
-It's worthy to notice that the regularity could be non correlated to the synchronization, in the sense that a user could produce a very regular sequence but still not be synchronized with the provided soundtrack.
+It is worth to notice that the regularity could be uncorrelated to the synchronization, in the sense that a user could produce a very regular sequence without being synchronized with the provided soundtrack.
 \todo[inline,color=yellow]{Say something w.r.t to the data once we have them}
 
 \subsubsection*{Synchronization}
+As stated above the regularity might be uncorrelated to the synchronization, so we also want to have a performance measure of the user synchronization with the provided soundtrack.
+In order to achieve this for each beat interval we measure the delay between the user's tap and the last closest beat.
+If no user's tap or more than one taps occur in the interval, we take as delay the whole distance between two consecutive beat.
+\missingfigure{An image to explain the sync measure}
+We then take the sum of every delay as the final measure.
+The lower the sum the better the overall synchronization.
+
 
 \subsubsection*{Normalized Synchronization}
 
