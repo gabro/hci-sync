@@ -6,6 +6,15 @@
 \usepackage{soul,color}
 \usepackage{amsmath}
 
+%Needed to compile titlesec because IEEEtran does not define it
+\newcommand{\subparagraph}{} 
+\usepackage{titlesec}
+
+\titlespacing\section{0pt}{1.5ex plus 1ex minus 0.5ex}%
+{0.7ex plus 1ex minus 0ex}
+\titlespacing\subsection{0pt}{1.5ex plus 1ex minus 0.5ex}%
+{0.7ex plus .5ex minus 0ex}
+
 \title{TBD}
 \author{\IEEEauthorblockN{\textbf{Daniele Gallingani}}
 \IEEEauthorblockA{University of Illinois\\ at Chicago\\
@@ -26,14 +35,19 @@ gpetro3@uic.edu}}
 \newcommand{\testfirst}{Balloon Tapper}
 \newcommand{\testsecond}{Balloon Inflater}
 
+% Sans-serif instead of classical "old" serif
+\renewcommand*\familydefault{\sfdefault}
+
+% A slightly larger margin for better side-notes visualization
+\setlength{\marginparwidth}{1.2cm}
+
 \begin{document}
 
 \maketitle
 \listoftodos
 
-
 \begin{IEEEkeywords}
-	Sync
+	Sync, Todo, Todo, Todo, Todo
 \end{IEEEkeywords}
 \input{abstract}
 \input{related}
