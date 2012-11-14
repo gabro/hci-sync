@@ -2,9 +2,20 @@
 
 \usepackage{hyperref}
 \usepackage{lipsum}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{soul,color}
 \usepackage{amsmath}
+
+%Needed to compile titlesec because IEEEtran does not define it
+\newcommand{\subparagraph}{} 
+\usepackage{titlesec}
+
+%Shrink the spacing after section headings a bit
+\titlespacing\section{0pt}{1.5ex plus 1ex minus 0.5ex}%
+{0.7ex plus 1ex minus 0ex}
+\titlespacing\subsection{0pt}{1.5ex plus 1ex minus 0.5ex}%
+{0.7ex plus .5ex minus 0ex}
 
 \title{TBD}
 \author{\IEEEauthorblockN{\textbf{Daniele Gallingani}}
@@ -26,21 +37,26 @@ gpetro3@uic.edu}}
 \newcommand{\testfirst}{Balloon Tapper}
 \newcommand{\testsecond}{Balloon Inflater}
 
+% Sans-serif instead of classical "old" serif
+\renewcommand*\familydefault{\sfdefault}
+
+% A slightly larger margin for better side-notes visualization
+\setlength{\marginparwidth}{1.2cm}
+
 \begin{document}
 
 \maketitle
 \listoftodos
 
-
 \begin{IEEEkeywords}
-	Sync
+	Sync, Todo, Todo, Todo, Todo
 \end{IEEEkeywords}
 \input{abstract}
 \input{related}
 \input{frame}
 \input{experiment}
 \input{performance}
-%\input{findings}
+\input{findings}
 \input{conclusion}
 
 \nocite{*}
