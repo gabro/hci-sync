@@ -1,56 +1,62 @@
-\documentclass[conference, compsoc, 10pt]{IEEEtran}
+\documentclass{sigchi}
+
+\pagenumbering{arabic}
+
+\usepackage{balance}  % to better equalize the last page
 
 \usepackage{hyperref}
 \usepackage{lipsum}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{soul,color}
+\usepackage{soul}
 \usepackage{amsmath}
 
-%Needed to compile titlesec because IEEEtran does not define it
-\newcommand{\subparagraph}{} 
-\usepackage{titlesec}
+% %Needed to compile titlesec because IEEEtran does not define it
+% \newcommand{\subparagraph}{} 
+% \usepackage{titlesec}
 
-%Shrink the spacing after section headings a bit
-\titlespacing\section{0pt}{1.5ex plus 1ex minus 0.5ex}%
-{0.7ex plus 1ex minus 0ex}
-\titlespacing\subsection{0pt}{1.5ex plus 1ex minus 0.5ex}%
-{0.7ex plus .5ex minus 0ex}
+% %Shrink the spacing after section headings a bit
+% \titlespacing\section{0pt}{1.5ex plus 1ex minus 0.5ex}%
+% {0.7ex plus 1ex minus 0ex}
+% \titlespacing\subsection{0pt}{1.5ex plus 1ex minus 0.5ex}%
+% {0.7ex plus .5ex minus 0ex}
 
 \title{TBD}
-\author{\IEEEauthorblockN{\textbf{Daniele Gallingani}}
-\IEEEauthorblockA{University of Illinois\\ at Chicago\\
-dgalli3@uic.edu}
-\and
-\IEEEauthorblockN{\textbf{Mingwei Li}}
-\IEEEauthorblockA{University of Illinois\\ at Chicago\\
-mli53@uic.edu}
-\and
-\IEEEauthorblockN{\textbf{Alessandro Panebianco}}
-\IEEEauthorblockA{University of Illinois\\ at Chicago\\
-apaneb2@uic.edu}
-\and
-\IEEEauthorblockN{\textbf{Gabriele Petronella}}
-\IEEEauthorblockA{University of Illinois\\ at Chicago\\
-gpetro3@uic.edu}}
+
+\numberofauthors{4}
+\author{
+  \alignauthor Daniele Gallingani\\
+    \affaddr{University of Illinois at Chicago}\\
+    \email{dgalli3@uic.edu}\\
+  \alignauthor Mingwei Li\\
+    \affaddr{University of Illinois at Chicago}\\
+    \email{mli53@uic.edu}\\
+  \alignauthor Alessandro Panebianco\\
+    \affaddr{University of Illinois at Chicago}\\
+    \email{apaneb2@uic.edu}\\
+  \alignauthor Gabriele Petronella\\
+    \affaddr{University of Illinois at Chicago}\\
+    \email{gpetro3@uic.edu}\\
+}
 
 \newcommand{\testfirst}{Balloon Tapper}
 \newcommand{\testsecond}{Balloon Inflater}
-
-% Sans-serif instead of classical "old" serif
-\renewcommand*\familydefault{\sfdefault}
-
-% A slightly larger margin for better side-notes visualization
-\setlength{\marginparwidth}{1.2cm}
 
 \begin{document}
 
 \maketitle
 \listoftodos
 
-\begin{IEEEkeywords}
+\keywords{
 	Sync, Todo, Todo, Todo, Todo
-\end{IEEEkeywords}
+}
+
+\category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
+
+\terms{
+    Human Factors; Design; Measurement.
+}
+
 \input{abstract}
 \input{related}
 \input{frame}
@@ -59,8 +65,10 @@ gpetro3@uic.edu}}
 \input{findings}
 \input{conclusion}
 
+\balance
+
 \nocite{*}
-\bibliographystyle{IEEETran}
-\bibliography{IEEEabrv,bibliography}
+\bibliographystyle{acm-sigchi}
+\bibliography{bibliography}
 
 \end{document}
