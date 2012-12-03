@@ -1,24 +1,40 @@
 var sessions = require("./sessions.json");
-
-function tapAverage (sessions, gameMode) {
+var fs = require('fs');
+var tapAverage = function (session) {
 	var sum = 0;
-	var count = 0;
-
-	for (var s in sessions) {
-		var partSum = 0;
-		var prev = 0;
-		if (sessions[s].gameMode == gameMode) {
-			for (t in sessions[s].taps) {
-				partSum += sessions[s].taps[t].time - prev;
-				prev = sessions[s].taps[t].time;
-			}
-			// console.log("average: " + partSum / sessions[s].taps.length);
-			count++;
-			sum += partSum / sessions[s].taps.length;
-		}
+	var prev = 0;
+	for (t in session.taps) {
+		sum += session.taps[t].time - prev;
+		prev = session.taps[t].time;
 	}
-	return sum / count;
+	return sum / session.taps.length;
 }
+var tapError = function (session, average) {
+	var taps = session.taps;
+	var prev = 0;
+	var sseSum = 0;
+	var count = 0;
+	for (var i = 0; i < taps.length; i++) {
+		count++;
+		sseSum += Math.pow(average - (taps[i].time - prev), 2);
+		prev = taps[i].time;
+		taps[i].mse = sseSum / count;
+	}
+	session.mse = sseSum / taps.length;
+};
+var sessions = sessions.map(function (s) {
+	s['averageInterval'] = tapAverage(s);
+	tapError(s, s.averageInterval);
+	return s;
+});
+var data = sessions.map(function (d) {
+	return d.taps.map(function(tap) {
+		return d._id['$oid'] + "," + d.gameMode + "," + tap.time + "," + tap.mse;
+	}).join("\n");
+});
 
-console.log("Balloon Tapper. Average interval between taps: " + tapAverage(sessions, 0));
-console.log("Balloon Inflater. Average interval between taps: " + tapAverage(sessions, 1));
+fs.writeFile('./sessions.csv', data.join('\n'), function (err) {
+	if (err) {
+		return console.log(err);
+	}
+});
