@@ -18,15 +18,13 @@ It is worth to notice that the regularity could be uncorrelated to the synchroni
 
 \subsection{Synchronization}
 As stated above the regularity might be uncorrelated to the synchronization, so we also want to have a measure of how well the user is synchronized with the provided soundtrack.
-In order to achieve this, we measure for each beat interval the delay between the user's tap and the last closest beat.
-If no user's tap or more than one occur in the interval, we take the whole distance between two consecutive beat as delay.
-
+In order to achieve this, we assign a score to every user's tap, using a linear function bounded between 0 and 1. The closer the tap to a beat, the higher the score. Such score function is presented in Figure~\ref{fig:sync-measure}.
 \begin{figure}[h!t]
-\label{fig:sync-measure}
 \centering
 	{\setlength{\fboxsep}{1.5pt}
 	 \fbox{\includegraphics[width=0.45\textwidth]{sync}}}
 \caption{The synchronization measure}
+\label{fig:sync-measure}
 \end{figure}
 
 We then take the sum of every delay as the final measure, therefore the lower the sum the better the overall synchronization.
