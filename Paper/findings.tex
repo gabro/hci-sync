@@ -24,3 +24,35 @@ On the other hand the MSE for the \testsecond experiment is very irregular, as s
 \caption{Regularity of \testsecond experiment}
 \label{fig:reg2}
 \end{figure}
+
+\subsection{Synchronization}
+We will now present the results about the synchronization score previously defined. Given the results of the regularity we would expect a priori a bad synchronization for the \testsecond experiment, given that having a good synchronization with irregular tap intervals would be possible only skipping random beats producing a tapping behavior which seems to be very uncommon.
+
+As expected the synchronization score for the \testsecond experiment is pretty low, around 0.65. The \testfirst experiment on the other hand has a better sync score of 0.76, that, along with a consistent regularity, states a good synchronization of the users with the provided tempo.
+
+As a further data we also observer that the number of taps for the first experiment had a very low variance of 0.53, with a mean of 46.08 taps. In fact the vast majority of the users (around 92\%) made exactly 46 taps, while only 2 users managed to tap 47 times. This confirms the good level of synchronization for such experiment, given the consistency of this result across all the users. The results are shown in Figure~\ref{fig:taps1}.
+
+\begin{figure}[h!t]
+\centering
+	{\setlength{\fboxsep}{1.5pt}
+	 \fbox{\includegraphics[width=0.45\textwidth]{nOfTaps1}}}
+\caption{Number of taps distribution for the \testfirst experiment}
+\label{fig:taps1}
+\end{figure}
+
+On the other hand the number of taps for the \testsecond experiment has a higher variance of 6.01, with a mean of 36.57 taps. Again this confirms that in such experiment every user had a different behavior, not being well synchronized with the background tempo. The results are shown in Figure~\ref{fig:taps2}.
+
+\begin{figure}[h!t]
+\centering
+	{\setlength{\fboxsep}{1.5pt}
+	 \fbox{\includegraphics[width=0.45\textwidth]{nOfTaps2}}}
+\caption{Number of taps distribution for the \testsecond experiment}
+\label{fig:taps2}
+\end{figure}
+
+\subsection{Synchronization Ratio}
+Finally we present the results of the synchronization ratio. Such measure was meant to be as a check in case of very poor synchronization score given a good regularity: in such a case there could have been the possibility that the user was still synchronizing, but with a tempo which was multiple (or divisor) of the given one.
+Since this was not the case we expected the results to be consistent with the other measures and this was exactly the case.
+
+In fact the synchronization ratio for the \testfirst experiment was 1.04, a result very close to 1, meaning that the user is synchronizing exactly on the given tempo.
+For the \testsecond the synchronization ration was of 0.68, both far from the synchronization with the given tempo (1) and from the synchronization with half of the period (0.5).
